@@ -1,0 +1,399 @@
+/* =========================================
+   CYBERRANK AI — APPLICATION THEME
+   Premium Dark Cybersecurity Dashboard
+========================================= */
+
+:root {
+  --border-color: #26364d;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent-cyan: #06d9f5;
+  --background-primary: #080d19;
+  --background-secondary: #0b1425;
+}
+
+/* =========================================
+   GLOBAL STYLES
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Text selection */
+
+::selection {
+  background: rgba(6, 217, 245, 0.25);
+  color: white;
+}
+
+/* =========================================
+   DASHBOARD CARDS
+========================================= */
+
+.card,
+.stat-card,
+.panel {
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(17, 28, 48, 0.96),
+    rgba(11, 20, 36, 0.96)
+  );
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover,
+.stat-card:hover,
+.panel:hover {
+  transform: translateY(-2px);
+  border-color: rgba(6, 217, 245, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-weight: 750;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* =========================================
+   TABLES
+========================================= */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background: rgba(6, 217, 245, 0.035);
+}
+
+th {
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+td,
+th {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: rgba(6, 217, 245, 0.045);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================
+   FORM CONTROLS
+========================================= */
+
+input,
+select,
+textarea {
+  color: #f1f5f9;
+  background: #0b1425;
+  border: 1px solid #293951;
+  border-radius: 8px;
+}
+
+input,
+select,
+textarea {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: rgba(6, 217, 245, 0.45);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 3px rgba(6, 217, 245, 0.1);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #64748b;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    filter 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   RISK PRIORITY INDICATORS
+========================================= */
+
+.priority-critical {
+  color: #f87171;
+}
+
+.priority-high {
+  color: #fb923c;
+}
+
+.priority-medium {
+  color: #facc15;
+}
+
+.priority-low {
+  color: #4ade80;
+}
+
+/* =========================================
+   AI HIGHLIGHTS
+========================================= */
+
+.ai-glow {
+  box-shadow: 0 0 22px rgba(6, 217, 245, 0.08);
+}
+
+.ai-border {
+  border: 1px solid rgba(6, 217, 245, 0.25);
+}
+
+/* =========================================
+   CHARTS
+========================================= */
+
+.recharts-wrapper {
+  font-family: inherit;
+}
+
+.recharts-cartesian-axis-tick-value {
+  fill: #94a3b8;
+  font-size: 11px;
+}
+
+.recharts-cartesian-grid line {
+  stroke: rgba(148, 163, 184, 0.12);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.65;
+  }
+}
+
+.status-pulse {
+  animation: pulseGlow 2s infinite;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080d19;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #293951;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #06d9f5;
+}
+
+/* =========================================
+   RESPONSIVE IMPROVEMENTS
+========================================= */
+
+@media (max-width: 768px) {
+  table {
+    min-width: 650px;
+  }
+
+  .card,
+  .stat-card,
+  .panel {
+    border-radius: 10px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* Dashboard layout overflow fix */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+main section,
+main header {
+  min-width: 0;
+}
+
+main .grid > * {
+  min-width: 0;
+}
+/* Prevent dashboard content from exceeding viewport */
+
+main {
+  width: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+main > div {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+main header {
+  width: 100%;
+  min-width: 0;
+}
+
+main section {
+  max-width: 100%;
+}
+
+main .overflow-x-auto {
+  max-width: 100%;
+  overflow-x: auto;
+}
